@@ -1,0 +1,70 @@
+.container {
+  padding: var(--spacing-20) 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-30);
+}
+
+.backButton {
+  margin-right: var(--spacing-10);
+}
+
+.headerTitle {
+  font-size: var(--font-size-20);
+  font-weight: 600;
+  color: var(--spiral-dark);
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-30);
+}
+
+.drinkImage {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--border-radius-full);
+  object-fit: cover;
+}
+
+.drinkName {
+  font-size: var(--font-size-20);
+  font-weight: bold;
+  text-align: center;
+  margin-top: var(--spacing-20);
+  color: var(--spiral-dark);
+}
+
+.pieChartContainer {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-20);
+  margin: var(--spacing-20) 0;
+}
+
+.instructions {
+  padding: 0 var(--spacing-20) var(--spacing-20);
+  margin-top: var(--spacing-30);
+}
+
+.instructions p {
+  font-size: var(--font-size-17);
+  line-height: 1.6;
+  color: var(--spiral-dark);
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 100px 20px;
+  font-size: var(--font-size-17);
+  color: var(--spiral-gray);
+}
+
+.error {
+  color: #e53e3e;
+}
