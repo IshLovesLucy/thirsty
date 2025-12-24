@@ -1,0 +1,38 @@
+.drinkCardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.drinkCard {
+  display: flex;
+  align-items: center;
+  height: var(--row-height);
+  padding: var(--spacing-10);
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.drinkCard:hover {
+  background-color: var(--spiral-gray-lighter);
+}
+
+.drinkCard__image {
+  width: var(--thumbnail-size);
+  height: var(--thumbnail-size);
+  border-radius: var(--border-radius-full);
+  object-fit: cover;
+  margin-right: var(--spacing-15);
+  flex-shrink: 0;
+}
+
+.drinkCard__name {
+  flex: 1;
+  font-size: var(--font-size-17);
+  color: var(--spiral-dark);
+}
+
+.drinkCard__chevron {
+  color: var(--spiral-gray-light);
+  flex-shrink: 0;
+}
