@@ -38,13 +38,13 @@ export function parseIngredientAmount(measure: string): number | null {
     return null;
   }
 
-  // Extract unit
-  const unitMatch = normalized.match(/\b(oz|tsp|tbsp|cl|cup)\b/);
+  // Extract unit (case-insensitive)
+  const unitMatch = normalized.match(/\b(oz|tsp|tbsp|cl|cup)\b/i);
   if (unitMatch) {
-    const unit = unitMatch[1] as keyof typeof CONVERSIONS_TO_OZ;
+    const unit = unitMatch[1].toLowerCase() as keyof typeof CONVERSIONS_TO_OZ;
     return amount * CONVERSIONS_TO_OZ[unit];
   }
 
-  // If no unit found, assume oz
-  return amount;
+  // If no valid unit found, return null (don't assume oz)
+  return null;
 }
