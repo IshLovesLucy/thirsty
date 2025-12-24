@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import { ChakraProvider } from '@chakra-ui/react';
-import { SWRConfig } from 'swr';
-import { theme } from './theme';
+import { ChakraProvider } from '@chakra-ui/react'
+import { system } from './theme'
+import { SWRConfig } from 'swr'
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -15,7 +15,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         dedupingInterval: 2000,
       }}
     >
-      <ChakraProvider theme={theme}>{children}</ChakraProvider>
+      <ChakraProvider value={system}>{children}</ChakraProvider>
     </SWRConfig>
-  );
+  )
 }

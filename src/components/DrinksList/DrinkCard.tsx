@@ -1,13 +1,12 @@
-'use client';
+'use client'
 
-import { Box, Flex, Image } from '@chakra-ui/react';
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import Link from 'next/link';
-import { Drink } from '@/types/drink';
-import styles from './DrinkCard.module.css';
+import { Box, Flex, Image } from '@chakra-ui/react'
+import Link from 'next/link'
+import type { Drink } from '@/types/drink'
+import styles from './DrinkCard.module.css'
 
 interface DrinkCardProps {
-  drink: Drink;
+  drink: Drink
 }
 
 export function DrinkCard({ drink }: DrinkCardProps) {
@@ -19,9 +18,12 @@ export function DrinkCard({ drink }: DrinkCardProps) {
           alt={drink.strDrink}
           className={styles.drinkCard__image}
         />
+
         <Box className={styles.drinkCard__name}>{drink.strDrink}</Box>
-        <ChevronRightIcon className={styles.drinkCard__chevron} />
+
+        {/* Simple chevron using CSS */}
+        <span className={styles.drinkCard__chevron}>›</span>
       </Flex>
     </Link>
-  );
+  )
 }

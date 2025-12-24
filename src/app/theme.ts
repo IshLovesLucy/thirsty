@@ -1,8 +1,11 @@
-import { extendTheme } from '@chakra-ui/react';
+import { createSystem, defaultConfig } from '@chakra-ui/react'
 
-export const theme = extendTheme({
-  config: {
-    initialColorMode: 'light',
-    useSystemColorMode: false,
+export const system = createSystem(defaultConfig, {
+  theme: {
+    tokens: {
+      colors: {
+        // We're using CSS variables instead, so minimal theme config
+      },
+    },
   },
-});
+})
