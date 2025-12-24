@@ -134,8 +134,6 @@ Component documentation available for:
 
 Run Storybook: `npm run storybook`
 
-## 📝 License
-This project was created as part of a coding challenge for Spiral.
 
 ---
 
