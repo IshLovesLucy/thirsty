@@ -10,8 +10,10 @@ export default function HomePage() {
   const { drinks, isLoading, error, query, setQuery } = useDrinkSearch();
 
   return (
-    <Container maxW="container.md" className={styles.container}>
-      <h1 className={styles.title}>Thirsty</h1>
+    <Container as="main" maxW="container.md" className={styles.container}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>Thirsty</h1>
+      </header>
 
       <SearchBar onSearch={setQuery} />
 

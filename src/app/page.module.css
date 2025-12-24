@@ -2,6 +2,10 @@
   padding: var(--spacing-20) 16px;
 }
 
+.header {
+  /* Semantic wrapper for header */
+}
+
 .title {
   font-size: 28px;
   font-weight: bold;

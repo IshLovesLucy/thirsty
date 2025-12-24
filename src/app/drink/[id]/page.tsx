@@ -33,43 +33,47 @@ export default function DrinkDetailsPage() {
   }
 
   return (
-    <Container maxW="container.md" className={styles.container}>
-      <Flex className={styles.header}>
-        <IconButton
-          aria-label="Back to search"
-          onClick={() => router.back()}
-          className={styles.backButton}
-          variant="ghost"
-        >
-          ←
-        </IconButton>
-        <h1 className={styles.headerTitle}>Thirsty</h1>
-      </Flex>
+    <Container as="main" maxW="container.md" className={styles.container}>
+      <header className={styles.header}>
+        <Flex>
+          <IconButton
+            aria-label="Back to search"
+            onClick={() => router.back()}
+            className={styles.backButton}
+            variant="ghost"
+          >
+            ←
+          </IconButton>
+          <h1 className={styles.headerTitle}>Thirsty</h1>
+        </Flex>
+      </header>
 
-      <Box className={styles.imageContainer}>
-        <Image
-          src={drink.strDrinkThumb}
-          alt={drink.strDrink}
-          width={200}
-          height={200}
-          style={{ borderRadius: '50%', objectFit: 'cover' }}
-          priority={true}
-        />
-      </Box>
-
-      <h2 className={styles.drinkName}>{drink.strDrink}</h2>
-
-      <IngredientLegend ingredients={ingredients} />
-
-      {ingredients.length > 0 && (
-        <Box className={styles.pieChartContainer}>
-          <IngredientPieChart ingredients={ingredients} />
+      <article className={styles.article}>
+        <Box className={styles.imageContainer}>
+          <Image
+            src={drink.strDrinkThumb}
+            alt={drink.strDrink}
+            width={200}
+            height={200}
+            style={{ borderRadius: '50%', objectFit: 'cover' }}
+            priority={true}
+          />
         </Box>
-      )}
 
-      <Box className={styles.instructions}>
-        <p>{drink.strInstructions}</p>
-      </Box>
+        <h2 className={styles.drinkName}>{drink.strDrink}</h2>
+
+        <IngredientLegend ingredients={ingredients} />
+
+        {ingredients.length > 0 && (
+          <Box className={styles.pieChartContainer}>
+            <IngredientPieChart ingredients={ingredients} />
+          </Box>
+        )}
+
+        <Box className={styles.instructions}>
+          <p>{drink.strInstructions}</p>
+        </Box>
+      </article>
     </Container>
   );
 }

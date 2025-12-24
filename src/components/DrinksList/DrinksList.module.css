@@ -1,4 +1,7 @@
 .drinksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   background-color: var(--spiral-white);
   border-radius: 8px;
   overflow: hidden;
