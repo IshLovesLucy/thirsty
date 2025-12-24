@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+storybook-static/
+coverage/
+build/
+dist/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.DS_Store
+*.log
