@@ -12,7 +12,7 @@ export function IngredientLegend({ ingredients }: IngredientLegendProps) {
   return (
     <Box className={styles.ingredientLegend}>
       <h3 className={styles.ingredientLegend__title}>Ingredients:</h3>
-      <VStack spacing="12px" align="stretch">
+      <VStack align="stretch">
         {ingredients.map((ingredient, index) => (
           <Flex key={index} className={styles.ingredientLegend__item}>
             <Box
@@ -20,7 +20,8 @@ export function IngredientLegend({ ingredients }: IngredientLegendProps) {
               style={{ backgroundColor: ingredient.color }}
             />
             <span className={styles.ingredientLegend__text}>
-              {ingredient.name} ({ingredient.measure})
+              {ingredient.name}
+              {ingredient.measure ? ` (${ingredient.measure.trim()})` : ''}
             </span>
           </Flex>
         ))}
