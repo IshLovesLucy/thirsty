@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Thirsty - Cocktail Finder App
 
-## Getting Started
+A Next.js application for searching and exploring cocktail recipes using the CocktailDB API.
 
-First, run the development server:
+## 🚀 Live Demo
+[Add live URL here after Vercel deployment]
 
+## 🛠️ Tech Stack
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **UI Library:** Chakra UI v3
+- **Styling:** CSS Modules with design tokens
+- **Data Fetching:** SWR
+- **Visualization:** Recharts (pie chart)
+- **Testing:** Vitest + React Testing Library
+- **Documentation:** Storybook
+- **Deployment:** Vercel
+
+## ✨ Features
+- **Search cocktails** by name with debounced input (300ms)
+- **Browse results** with drink images and names
+- **View details** including:
+  - Circular drink image
+  - Color-coded ingredients legend
+  - Pie chart showing ingredient ratios
+  - Preparation instructions
+- **Responsive design** - works on mobile and desktop
+- **Unit conversion** - handles oz, tsp, tbsp, cl, cup measurements
+
+## 📦 Installation
 ```bash
+# Clone the repository
+git clone https://github.com/IshLovesLucy/thirsty.git
+cd thirsty
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Available Scripts
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run lint:fix     # Fix ESLint errors
+npm run format       # Format code with Prettier
+npm run test         # Run unit tests
+npm run test:watch   # Run tests in watch mode
+npm run storybook    # Launch Storybook
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Architecture Decisions
 
-## Learn More
+### Component-Scoped CSS Modules
+Uses CSS Modules instead of inline styles for better maintainability and separation of concerns. Design tokens defined in `globals.css` provide consistent theming.
 
-To learn more about Next.js, take a look at the following resources:
+### SWR for Data Fetching
+Implements SWR for automatic caching, request deduplication, and optimistic UI updates. Provides instant navigation between search results and details pages.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Debounced Search
+300ms debounce prevents excessive API calls while typing, improving performance and user experience.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Unit Conversion System
+Standardizes all measurements to ounces for pie chart display. Handles fractions (1/2), mixed numbers (1 1/2), and multiple units (oz, tsp, tbsp, cl, cup).
 
-## Deploy on Vercel
+### Pastel Color Generation
+Randomly generates HSL-based pastel colors (70-85% saturation, 75-85% lightness) for ingredient visualization.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Design Specifications
+Built according to Spiral's design specifications including:
+- 60px row height for drink cards
+- 40px circular thumbnails
+- 120px pie chart size
+- 20x20px color squares with 3px border radius
+- Spiral brand colors (#E91E8C primary pink)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤖 AI Assistant Usage
+This project was developed with assistance from Claude (Anthropic) and Claude Code for:
+- Project scaffolding and boilerplate setup
+- Component generation and CSS modules
+- Unit test creation
+- Code formatting and linting configuration
+
+Manual work included:
+- Architecture decisions and planning
+- Business logic implementation (unit conversion, ingredient parsing)
+- UI/UX refinements
+- Testing strategy and bug fixes
+
+## 📁 Project Structure
+```
+src/
+├── app/                    # Next.js app router pages
+│   ├── drink/[id]/        # Drink details page
+│   ├── globals.css        # Design tokens & global styles
+│   ├── providers.tsx      # Chakra UI & SWR providers
+│   └── theme.ts           # Chakra UI theme config
+├── components/            # React components
+│   ├── SearchBar/
+│   ├── DrinksList/
+│   └── DrinkDetails/
+├── hooks/                 # Custom React hooks
+│   ├── useDebounce.ts
+│   ├── useDrinkSearch.ts
+│   └── useDrink.ts
+├── services/              # API service layer
+│   └── cocktailApi.ts
+├── utils/                 # Utility functions
+│   ├── unitConversion.ts
+│   ├── colorGenerator.ts
+│   └── parseIngredients.ts
+└── types/                 # TypeScript interfaces
+    └── drink.ts
+```
+
+## 🧪 Testing
+Unit tests cover:
+- Unit conversion logic (oz, tsp, tbsp, cl, cup)
+- Color generation
+- Component rendering (DrinkCard)
+
+Run tests: `npm run test`
+
+## 📚 Storybook
+Component documentation available for:
+- DrinkCard (multiple states)
+- IngredientLegend (various ingredient counts)
+
+Run Storybook: `npm run storybook`
+
+## 📝 License
+This project was created as part of a coding challenge for Spiral.
+
+---
+
+Built with ❤️ using Next.js and TypeScript
