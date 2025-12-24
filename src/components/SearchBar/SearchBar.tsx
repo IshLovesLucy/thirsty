@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import { Input } from '@chakra-ui/react'
-import styles from './SearchBar.module.css'
+import { Input } from '@chakra-ui/react';
+import styles from './SearchBar.module.css';
 
 interface SearchBarProps {
-  onSearch: (query: string) => void
+  onSearch: (query: string) => void;
 }
 
 export function SearchBar({ onSearch }: SearchBarProps) {
@@ -16,5 +16,5 @@ export function SearchBar({ onSearch }: SearchBarProps) {
         className={styles.searchInput}
       />
     </div>
-  )
+  );
 }

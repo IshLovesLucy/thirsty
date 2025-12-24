@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { system } from '@/app/theme';
 import { IngredientLegend } from './IngredientLegend';
-import type { ParsedIngredient } from '@/types/drink';
 
 const meta = {
   title: 'Components/IngredientLegend',

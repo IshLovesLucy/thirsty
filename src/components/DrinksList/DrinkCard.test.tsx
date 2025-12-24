@@ -1,9 +1,9 @@
-import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
-import { ChakraProvider } from '@chakra-ui/react'
-import { system } from '@/app/theme'
-import { DrinkCard } from './DrinkCard'
-import type { Drink } from '@/types/drink'
+import { describe, it, expect } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { system } from '@/app/theme';
+import { DrinkCard } from './DrinkCard';
+import type { Drink } from '@/types/drink';
 
 const mockDrink: Drink = {
   idDrink: '11007',
@@ -40,27 +40,29 @@ const mockDrink: Drink = {
   strMeasure13: null,
   strMeasure14: null,
   strMeasure15: null,
-}
+};
 
 const renderWithChakra = (component: React.ReactElement) => {
-  return render(<ChakraProvider value={system}>{component}</ChakraProvider>)
-}
+  return render(<ChakraProvider value={system}>{component}</ChakraProvider>);
+};
 
 describe('DrinkCard', () => {
   it('renders drink name', () => {
-    renderWithChakra(<DrinkCard drink={mockDrink} />)
-    expect(screen.getByText('Margarita')).toBeInTheDocument()
-  })
+    renderWithChakra(<DrinkCard drink={mockDrink} />);
+    expect(screen.getByText('Margarita')).toBeInTheDocument();
+  });
 
   it('renders drink image', () => {
-    renderWithChakra(<DrinkCard drink={mockDrink} />)
-    const img = screen.getByAltText('Margarita') as HTMLImageElement
-    expect(img).toHaveAttribute('src', mockDrink.strDrinkThumb)
-  })
+    renderWithChakra(<DrinkCard drink={mockDrink} />);
+    const img = screen.getByAltText('Margarita') as HTMLImageElement;
+    expect(img).toBeInTheDocument();
+    // Next.js Image transforms src to optimized URL
+    expect(img.src).toContain('_next/image');
+  });
 
   it('has correct link href', () => {
-    renderWithChakra(<DrinkCard drink={mockDrink} />)
-    const link = screen.getByRole('link')
-    expect(link).toHaveAttribute('href', '/drink/11007')
-  })
-})
+    renderWithChakra(<DrinkCard drink={mockDrink} />);
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('href', '/drink/11007');
+  });
+});

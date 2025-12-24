@@ -10,7 +10,7 @@ interface IngredientPieChartProps {
 
 export function IngredientPieChart({ ingredients }: IngredientPieChartProps) {
   const ingredientsWithAmount = ingredients.filter(
-    (ingredient) => ingredient.amount > 0
+    (ingredient) => ingredient.amount > 0,
   );
 
   return (

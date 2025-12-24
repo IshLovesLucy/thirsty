@@ -2,11 +2,11 @@
 
 import useSWR from 'swr';
 import { cocktailApi } from '@/services/cocktailApi';
-import { Drink, CocktailApiResponse } from '@/types/drink';
+import { CocktailApiResponse } from '@/types/drink';
 
 export function useDrink(id: string) {
   const { data, error, isLoading } = useSWR<CocktailApiResponse>(
-    cocktailApi.drinkKey(id)
+    cocktailApi.drinkKey(id),
   );
 
   return {
