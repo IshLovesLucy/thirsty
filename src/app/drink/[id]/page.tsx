@@ -1,7 +1,6 @@
 'use client';
 
 import { Container, Box, Flex, Image, IconButton } from '@chakra-ui/react';
-import { ArrowBackIcon } from '@chakra-ui/icons';
 import { useRouter, useParams } from 'next/navigation';
 import { useDrink } from '@/hooks/useDrink';
 import { IngredientLegend } from '@/components/DrinkDetails/IngredientLegend';
@@ -37,11 +36,12 @@ export default function DrinkDetailsPage() {
       <Flex className={styles.header}>
         <IconButton
           aria-label="Back to search"
-          icon={<ArrowBackIcon />}
           onClick={() => router.back()}
           className={styles.backButton}
           variant="ghost"
-        />
+        >
+          ←
+        </IconButton>
         <h1 className={styles.headerTitle}>Thirsty</h1>
       </Flex>
 
