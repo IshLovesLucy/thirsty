@@ -1,6 +1,7 @@
 'use client';
 
-import { Container, Box, Flex, Image, IconButton } from '@chakra-ui/react';
+import { Container, Box, Flex, IconButton } from '@chakra-ui/react';
+import Image from 'next/image';
 import { useRouter, useParams } from 'next/navigation';
 import { useDrink } from '@/hooks/useDrink';
 import { IngredientLegend } from '@/components/DrinkDetails/IngredientLegend';
@@ -49,7 +50,10 @@ export default function DrinkDetailsPage() {
         <Image
           src={drink.strDrinkThumb}
           alt={drink.strDrink}
-          className={styles.drinkImage}
+          width={200}
+          height={200}
+          style={{ borderRadius: '50%', objectFit: 'cover' }}
+          priority={true}
         />
       </Box>
 

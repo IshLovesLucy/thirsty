@@ -1,6 +1,7 @@
 'use client'
 
-import { Box, Flex, Image } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Drink } from '@/types/drink'
 import styles from './DrinkCard.module.css'
@@ -16,7 +17,10 @@ export function DrinkCard({ drink }: DrinkCardProps) {
         <Image
           src={drink.strDrinkThumb}
           alt={drink.strDrink}
-          className={styles.drinkCard__image}
+          width={40}
+          height={40}
+          style={{ borderRadius: '50%', objectFit: 'cover', marginRight: '15px' }}
+          priority={false}
         />
 
         <Box className={styles.drinkCard__name}>{drink.strDrink}</Box>
