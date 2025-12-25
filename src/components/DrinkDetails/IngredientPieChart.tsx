@@ -1,7 +1,7 @@
 'use client';
 
 import { PieChart, Pie, Cell } from 'recharts';
-import { ParsedIngredient } from '@/types/drink';
+import { type ParsedIngredient } from '@/types/drink';
 import styles from './IngredientPieChart.module.css';
 
 interface IngredientPieChartProps {
