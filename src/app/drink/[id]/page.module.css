@@ -62,8 +62,6 @@
 .drinkImage {
   width: 200px;
   height: 200px;
-  border-radius: var(--border-radius-full);
-  object-fit: cover;
 }
 
 .ingredientsSection {

@@ -19,11 +19,7 @@ export function DrinkCard({ drink }: DrinkCardProps) {
           alt={drink.strDrink}
           width={40}
           height={40}
-          style={{
-            borderRadius: '50%',
-            objectFit: 'cover',
-            marginRight: '15px',
-          }}
+          className={`${styles.drinkCard__image} image__circle`}
           priority={false}
         />
 

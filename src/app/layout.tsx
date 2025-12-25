@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Spiral Thirsty APP',
+  title: 'Spiral Thirsty APP by Ish',
   description: 'Ishs App made with Love',
   icons: {
     icon: '/favicon.svg',

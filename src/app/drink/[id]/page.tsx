@@ -58,7 +58,7 @@ export default function DrinkDetailsPage() {
             alt={drink.strDrink}
             width={200}
             height={200}
-            style={{ borderRadius: '50%', objectFit: 'cover' }}
+            className="image__circle"
             priority={true}
           />
         </div>

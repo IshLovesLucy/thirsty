@@ -65,3 +65,8 @@ body {
   border-color: var(--spiral-pink);
   box-shadow: 0 0 0 1px var(--spiral-pink);
 }
+
+.image__circle {
+  border-radius: var(--border-radius-full);
+  object-fit: 'cover';
+}
