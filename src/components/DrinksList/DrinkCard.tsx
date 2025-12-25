@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Drink } from '@/types/drink';
@@ -27,7 +27,7 @@ export function DrinkCard({ drink }: DrinkCardProps) {
           priority={false}
         />
 
-        <Box className={styles.drinkCard__name}>{drink.strDrink}</Box>
+        <div className={styles.drinkCard__name}>{drink.strDrink}</div>
 
         {/* Simple chevron using CSS */}
         <span className={styles.drinkCard__chevron}>›</span>

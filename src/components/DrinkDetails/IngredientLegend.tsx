@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex, VStack } from '@chakra-ui/react';
+import { Flex, VStack } from '@chakra-ui/react';
 import { ParsedIngredient } from '@/types/drink';
 import styles from './IngredientLegend.module.css';
 
@@ -10,12 +10,12 @@ interface IngredientLegendProps {
 
 export function IngredientLegend({ ingredients }: IngredientLegendProps) {
   return (
-    <Box className={styles.ingredientLegend}>
+    <div className={styles.ingredientLegend}>
       <h3 className={styles.ingredientLegend__title}>Ingredients:</h3>
       <VStack align="stretch">
         {ingredients.map((ingredient, index) => (
           <Flex key={index} className={styles.ingredientLegend__item}>
-            <Box
+            <div
               className={styles.ingredientLegend__colorSquare}
               style={{ backgroundColor: ingredient.color }}
             />
@@ -26,6 +26,6 @@ export function IngredientLegend({ ingredients }: IngredientLegendProps) {
           </Flex>
         ))}
       </VStack>
-    </Box>
+    </div>
   );
 }

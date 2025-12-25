@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Box, Flex, IconButton } from '@chakra-ui/react';
+import { Container, Flex, IconButton } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useRouter, useParams } from 'next/navigation';
 import { useDrink } from '@/hooks/useDrink';
@@ -35,21 +35,24 @@ export default function DrinkDetailsPage() {
   return (
     <Container as="main" maxW="container.md" className={styles.container}>
       <header className={styles.header}>
-        <Flex>
+        <Flex className={styles.headerTop}>
           <IconButton
             aria-label="Back to search"
             onClick={() => router.back()}
-            className={styles.backButton}
+            className={`${styles.backButton} border__focus`}
             variant="ghost"
           >
             ←
           </IconButton>
           <h1 className={styles.headerTitle}>Thirsty</h1>
         </Flex>
+        <h2 className={`${styles.drinkName} ${styles.center__header}`}>
+          {drink.strDrink}
+        </h2>
       </header>
 
       <article className={styles.article}>
-        <Box className={styles.imageContainer}>
+        <div className={styles.imageContainer}>
           <Image
             src={drink.strDrinkThumb}
             alt={drink.strDrink}
@@ -58,21 +61,26 @@ export default function DrinkDetailsPage() {
             style={{ borderRadius: '50%', objectFit: 'cover' }}
             priority={true}
           />
-        </Box>
+        </div>
 
-        <h2 className={styles.drinkName}>{drink.strDrink}</h2>
+        <h2 className={`${styles.drinkName} ${styles.center__article}`}>
+          {drink.strDrink}
+        </h2>
 
-        <IngredientLegend ingredients={ingredients} />
+        <Flex className={styles.ingredientsSection}>
+          <div className={styles.ingredientsColumn}>
+            <IngredientLegend ingredients={ingredients} />
+          </div>
+          {ingredients.length > 0 && (
+            <div className={styles.chartColumn}>
+              <IngredientPieChart ingredients={ingredients} />
+            </div>
+          )}
+        </Flex>
 
-        {ingredients.length > 0 && (
-          <Box className={styles.pieChartContainer}>
-            <IngredientPieChart ingredients={ingredients} />
-          </Box>
-        )}
-
-        <Box className={styles.instructions}>
+        <div className={styles.instructions}>
           <p>{drink.strInstructions}</p>
-        </Box>
+        </div>
       </article>
     </Container>
   );

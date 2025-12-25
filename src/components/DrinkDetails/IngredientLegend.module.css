@@ -1,12 +1,12 @@
 .ingredientLegend {
-  padding: 0 var(--spacing-20);
+  padding: 0;
 }
 
 .ingredientLegend__title {
   font-size: var(--font-size-17);
   font-weight: bold;
   margin-bottom: var(--spacing-20);
-  margin-top: var(--spacing-30);
+  margin-top: 0;
   color: var(--spiral-dark);
 }
 
