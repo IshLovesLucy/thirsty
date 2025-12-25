@@ -13,18 +13,24 @@ export function IngredientPieChart({ ingredients }: IngredientPieChartProps) {
     (ingredient) => ingredient.amount > 0,
   );
 
+  const chartData = ingredientsWithAmount.map((ingredient) => ({
+    name: ingredient.name,
+    amount: ingredient.amount,
+    color: ingredient.color,
+  }));
+
   return (
     <div className={styles.pieChartContainer}>
       <PieChart width={120} height={120}>
         <Pie
-          data={ingredientsWithAmount}
+          data={chartData}
           dataKey="amount"
           nameKey="name"
           cx="50%"
           cy="50%"
           outerRadius={60}
         >
-          {ingredientsWithAmount.map((entry, index) => (
+          {chartData.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={entry.color} />
           ))}
         </Pie>
