@@ -4,7 +4,9 @@ A Next.js application for searching and exploring cocktail recipes using the Coc
 
 ## 🚀 Live Demo
 
-[Add live URL here after Vercel deployment]
+**[View Live App →](https://thirsty-aa5ij3h43-ishloveslucys-projects.vercel.app/)**
+
+Deployed on Vercel with automatic CI/CD from GitHub.
 
 ## 🛠️ Tech Stack
 
