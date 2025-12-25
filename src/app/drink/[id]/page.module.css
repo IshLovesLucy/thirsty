@@ -68,7 +68,7 @@
   display: flex;
   gap: var(--spacing-30);
   padding: 0 var(--spacing-20);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: flex-start;
 }
 
